@@ -6,18 +6,18 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Entity // JPA를 사용해서 테이블과 매핑할 클래스
+//@Entity // JPA를 사용해서 테이블과 매핑할 클래스
 @Getter @Setter
-public class Member {
+public class Member_basic {
 
-  @Id
+  @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   @Column(name = "name", nullable = false)
   private String username;
 
   @Enumerated(EnumType.STRING)
-  private RoleType rolltype;
+  private RoleType_basic rolltype;
 
   private LocalDateTime createdDate;
 
@@ -26,7 +26,7 @@ public class Member {
   @Lob
   private String description;
 
-  public Member() {
+  public Member_basic() {
 
   }
 }

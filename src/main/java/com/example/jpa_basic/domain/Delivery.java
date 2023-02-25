@@ -1,9 +1,10 @@
 package com.example.jpa_basic.domain;
 
+import com.example.jpa_basic.domain.item.BaseEntity;
 import jakarta.persistence.*;
 
 @Entity
-public class Delivery {
+public class Delivery extends BaseEntity {
 
   @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "DELIVERY_ID")

@@ -1,5 +1,6 @@
 package com.example.jpa_basic.domain;
 
+import com.example.jpa_basic.domain.item.BaseEntity;
 import com.example.jpa_basic.domain.item.Item;
 import jakarta.persistence.*;
 
@@ -7,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Category {
+public class Category extends BaseEntity {
 
   @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "CATEGORY_ID")

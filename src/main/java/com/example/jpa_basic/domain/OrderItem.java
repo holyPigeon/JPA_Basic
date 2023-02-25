@@ -1,5 +1,6 @@
 package com.example.jpa_basic.domain;
 
+import com.example.jpa_basic.domain.item.BaseEntity;
 import com.example.jpa_basic.domain.item.Item;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -7,7 +8,7 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter
-public class OrderItem {
+public class OrderItem extends BaseEntity {
 
   @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "ORDER_ITEM_ID")

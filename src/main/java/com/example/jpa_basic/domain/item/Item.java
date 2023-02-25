@@ -1,11 +1,16 @@
-package com.example.jpa_basic.domain;
+package com.example.jpa_basic.domain.item;
 
+import com.example.jpa_basic.domain.Category;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter @Setter
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Item {
 
   @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,5 +23,6 @@ public class Item {
 
   private int stockQuantity;
 
-
+  @ManyToMany(mappedBy = "items")
+  private List<Category> categories = new ArrayList<>();
 }

@@ -25,4 +25,10 @@ public class Member {
 
   @OneToMany(mappedBy = "member")
   private List<Order> orders = new ArrayList<>();
+
+  //== 연관관게 편의 메소드 ==//
+  public void addOrder(Order order) {
+    orders.add(order);
+    order.setMember(this);
+  }
 }

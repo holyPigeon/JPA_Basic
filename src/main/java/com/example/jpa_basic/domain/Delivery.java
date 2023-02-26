@@ -1,6 +1,7 @@
 package com.example.jpa_basic.domain;
 
 import com.example.jpa_basic.domain.item.BaseEntity;
+import com.example.jpa_basic.domain.member.Address;
 import jakarta.persistence.*;
 
 @Entity
@@ -15,6 +16,9 @@ public class Delivery extends BaseEntity {
   private String street;
 
   private String zipcode;
+
+  @Embedded
+  private Address address;
 
   @Enumerated(EnumType.STRING)
   private DeliveryStatus status;

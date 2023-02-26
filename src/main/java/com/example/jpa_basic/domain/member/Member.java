@@ -1,5 +1,6 @@
-package com.example.jpa_basic.domain;
+package com.example.jpa_basic.domain.member;
 
+import com.example.jpa_basic.domain.Order;
 import com.example.jpa_basic.domain.item.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -18,11 +19,11 @@ public class Member extends BaseEntity {
 
   private String name;
 
-  private String city;
+  @Embedded
+  private Period period;
 
-  private String street;
-
-  private String zipcode;
+  @Embedded
+  private Address address;
 
   @OneToMany(mappedBy = "member")
   private List<Order> orders = new ArrayList<>();

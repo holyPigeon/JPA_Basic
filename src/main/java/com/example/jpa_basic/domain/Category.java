@@ -27,6 +27,6 @@ public class Category extends BaseEntity {
   @JoinColumn(name = "PARENT_ID")
   private Category parent;
 
-  @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL)
+  @OneToMany(mappedBy = "parent")
   private List<Category> child = new ArrayList<>();
 }

@@ -8,7 +8,7 @@ import org.springframework.cglib.core.Local;
 import java.time.LocalDateTime;
 
 @Embeddable
-@Getter @Setter
+@Getter
 public class Period {
 
   private LocalDateTime startDate;
